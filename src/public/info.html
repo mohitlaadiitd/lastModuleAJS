@@ -1,0 +1,15 @@
+<div ng-controller="InfoController as infoCtrl">
+
+    <h2 ng-if="!infoCtrl.signed" style="text-align: center;">Not Signed Up Yet.
+         <a href="" ui-sref="sign-up"> Sign up Now!</a>
+    </h2>
+
+    <div ng-if="infoCtrl.signed" style="font-size: 19px; text-align: left; margin: 30px;" >
+        Title of Menu Item: {{infoCtrl.data.name}} <br>
+        Description of Menu Item: {{infoCtrl.data.description}} <br><br><br><br>
+        <img src={{infoCtrl.url}}>   
+     </div>
+
+
+</div>
+

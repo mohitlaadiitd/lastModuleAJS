@@ -1,0 +1,50 @@
+<div style="margin: 50px;" ng-if="formCtrl.show">
+
+    <h1>Sign-Up</h1><br><br>
+    <form name="signUp" novalidate>
+        Enter your First Name:
+        <input type="text" name="firstName" ng-model="formCtrl.firstName" placeholder="Enter First Name..." required>
+        <span ng-if="signUp.firstName.$error.required && signUp.firstName.$touched">
+            Please enter valid Name
+        </span>
+        <br><br><br>
+        Enter your Last Name:
+        <input type="text" name="lastName" ng-model="formCtrl.lastName" placeholder="Enter Last Name..." required>
+        <span ng-if="signUp.lastName.$error.required && signUp.lastName.$touched">
+            Please enter valid Last Name
+        </span>
+        <br><br><br>
+        Enter your Email:
+        <input type="email" name="email" placeholder="Enter your Email..." ng-model="formCtrl.email" required>
+        <span ng-if="signUp.email.$invalid && signUp.email.$touched">
+            Must be a valid email address: handle@domain format
+        </span>
+        <br><br><br>
+
+        Enter your Phone Number:
+        <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="formCtrl.phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})" required style="color:black">
+        <span ng-if="signUp.phone.$invalid && signUp.phone.$touched">
+            Phone must be in the format ###-###-####.
+        </span>
+        <br><br><br>
+
+        Enter your Menu Number:
+        <input type="text" name="fav" ng-model="formCtrl.fav" required placeholder="Enter Favourite Dish..."
+            style="color:black">
+        <span ng-if="formCtrl.error">No such Menu Item exists.</span>
+        <br><br><br>
+        <div style="margin-top: 10px;">
+            Form valid? {{ signUp.$valid }}
+
+        </div>
+        <br>
+        <button type="submit" ng-disabled="signUp.$invalid" ng-click="formCtrl.submit()">Submit</button>
+    </form>
+
+
+</div>
+
+<div style="text-align: center;" ng-if="!formCtrl.show">
+    <h1>Your Information has been saved.</h1>
+</div>
