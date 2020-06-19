@@ -15,7 +15,7 @@
         }
         else {
             infoCtrl.signed = true;
-            infoCtrl.url = ("../../images/menu/" + infoCtrl.data.category_short_name + "/" + infoCtrl.data.category_short_name + ".jpg");
+            infoCtrl.url = ("../../lastModuleAJS/images/menu/" + infoCtrl.data.category_short_name + "/" + infoCtrl.data.category_short_name + ".jpg");
         }
 
 
